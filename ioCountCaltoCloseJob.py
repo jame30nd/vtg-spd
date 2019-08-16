@@ -124,6 +124,5 @@ while True :
             in4buffer = in4
             in8buffer = in8
         elif (in11 ==0 and in2 == 0 and in5 == 1 and in6 == 1) :
-            print("..")
             mm= 0
             sumLenght = 0
