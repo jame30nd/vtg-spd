@@ -11,6 +11,10 @@ fileLog = 'SPD-LOG-xx'
 compensationMM = 43.81
 compensationYard = 0.0479111986
 
+# 1 - 3
+#os.system('sudo mount.cifs //172.16.54.17/iotData /media/AIP -o rw,uid=pi,password=eseuser')
+# 4 - 6
+#os.system('sudo mount.cifs //172.16.54.14/iotData /media/AIP -o rw,uid=pi,password=eseuser')
 ioConnectMount = 'sudo mount.cifs //172.16.54.17/iotData /media/AIP -o rw,uid=pi,password=eseuser'
 pathLog = '/home/pi/VTG/SPD-LOG.csv'
 osUnMount = 'sudo umount /media/AIP'
@@ -54,11 +58,6 @@ def writeFile (datafram):
         print("Error")
         pass
         #f.close()
-
-# 1 - 3
-#os.system('sudo mount.cifs //172.16.54.17/iotData /media/AIP -o rw,uid=pi,password=eseuser')
-# 4 - 6
-#os.system('sudo mount.cifs //172.16.54.14/iotData /media/AIP -o rw,uid=pi,password=eseuser')
 
 while True :
         input_value = GPIO.input(18)
