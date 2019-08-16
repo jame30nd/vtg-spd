@@ -5,7 +5,7 @@ import os
 import array
 
 # name CSV FILE
-filename = 'SPD-xx'
+filename = 'SPD-02'
 fileLog = 'SPD-LOG-xx'
 
 compensationMM = 43.81
@@ -15,6 +15,7 @@ compensationYard = 0.0479111986
 #os.system('sudo mount.cifs //172.16.54.17/iotData /media/AIP -o rw,uid=pi,password=eseuser')
 # 4 - 6
 #os.system('sudo mount.cifs //172.16.54.14/iotData /media/AIP -o rw,uid=pi,password=eseuser')
+
 ioConnectMount = 'sudo mount.cifs //172.16.54.17/iotData /media/AIP -o rw,uid=pi,password=eseuser'
 pathLog = '/home/pi/VTG/SPD-LOG.csv'
 osUnMount = 'sudo umount /media/AIP'
@@ -27,7 +28,7 @@ GPIO.setup(25, GPIO.IN)
 GPIO.setup(5, GPIO.IN)
 GPIO.setup(6, GPIO.IN)
 GPIO.setup(13, GPIO.IN)
-GPIO.setup(19, GPIO.IN)
+GPIO.setup(22, GPIO.IN)  # GPIO.input(22) Cut Spreading 2
 GPIO.setup(26, GPIO.IN)
 GPIO.setup(8,GPIO.IN)
 GPIO.setup(7,GPIO.IN)
@@ -67,7 +68,7 @@ while True :
         in5 = GPIO.input(5)
         in6 = GPIO.input(6)
         in7 = GPIO.input(13)
-        in8 = GPIO.input(19) # GPIO.input(22) Cut Spreading 2
+        in8 = GPIO.input(22) # GPIO.input(22) Cut Spreading 2
         in9 = GPIO.input(26)
         in10 = GPIO.input(8)
         in11 = GPIO.input(7)
@@ -120,8 +121,3 @@ while True :
         elif (in11 ==0 and in2 == 0 and in5 == 1 and in6 == 1) :
             mm= 0
             sumLenght = 0
-
-
-
-
-

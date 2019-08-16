@@ -5,7 +5,7 @@ import os
 import array
 
 # name CSV FILE
-filename = 'SPD-xx'
+filename = 'SPD-03'
 fileLog = 'SPD-LOG-xx'
 
 compensationMM = 43.81
@@ -120,8 +120,3 @@ while True :
         elif (in11 ==0 and in2 == 0 and in5 == 1 and in6 == 1) :
             mm= 0
             sumLenght = 0
-
-
-
-
-

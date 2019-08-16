@@ -5,7 +5,7 @@ import os
 import array
 
 # name CSV FILE
-filename = 'SPD-xx'
+filename = 'SPD-01'
 fileLog = 'SPD-LOG-xx'
 
 compensationMM = 43.81
@@ -78,15 +78,15 @@ while True :
                         mm = (c/p)*counter
                         #print("pulse ",counter , " mm " , mm)
                 buffer = input_value
-            elif(in2 == 1 and in3 == 1 and in5 == 1  and in6 == 1 and in7 == 1 and in8 == 0 and in8buffer == 1 and in9 == 1): # Cut Spreadin 2-6
-            #elif (in2 == 0 and in3 == 1 and in5 == 1 and in6 == 1 and in7 == 1 and in8 == 0 and in8buffer == 1 and in9 == 1):  # Cut Spreading 1
+            #elif(in2 == 1 and in3 == 1 and in5 == 1  and in6 == 1 and in7 == 1 and in8 == 0 and in8buffer == 1 and in9 == 1): # Cut Spreadin 2-6
+            elif (in2 == 0 and in3 == 1 and in5 == 1 and in6 == 1 and in7 == 1 and in8 == 0 and in8buffer == 1 and in9 == 1):  # Cut Spreading 1
                 os.system(ioConnectMount)
                 #f = open(pathLog,'a')
                 time.sleep(0.3)
                 sumLenght = sumLenght+mm + compensationMM
                 #sumLog = mm
                 yard = sumLenght*0.00109361 + compensationYard
-                #yardLog  = mm *0.00109361
+                #yardLog  = mm *0.00109361 
                 counter = 0
                 #print("I/O Cuting  : sumLenght (mm)",sumLog," sumLenght (yard)",yardLog)
                 datafram = pd.DataFrame({'YD': ['{0:.4f}'.format(yard)], 'MT': ['{0:.4f}'.format(sumLenght/1000)]})
@@ -120,8 +120,3 @@ while True :
         elif (in11 ==0 and in2 == 0 and in5 == 1 and in6 == 1) :
             mm= 0
             sumLenght = 0
-
-
-
-
-
